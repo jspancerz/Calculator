@@ -1,24 +1,34 @@
 function operate(operator, x, y){
-    if(operator == add){
-        console.log('what two numbers would you like to add')
-        add()};
-    if(operator == subtract){
-        console.log('what two numbers would you like to subtract')
-        subtract()};
-    if(operator == multiply){
-        console.log('what two numbers would you like to multiply')
-        return multiply()};
-    if(operator == divide){
-        console.log('what two numbers would you like to divide by')
-        return divide()};
-}  
+    if(operator === 'add'){
+       return add(x, y);
+    }
+    if(operator === 'subtract'){
+      return subtract(x, y);
+    }
+    if(operator === 'multiply'){
+        return multiply(x, y);
+    }
+    if(operator === 'divide'){
+        return divide(x, y);
+    }
+    if(operator === 'divide' && x || y === 0){
+        return console.log('you cant divide by zero!')
+    }
+}
 
-add = (x, y) => x + y;
+let displayValue = {}
 
-subtract = (x , y) => x - y;
+add = (x, y) =>  x + y;
+
+subtract = (x, y) => x - y;
 
 multiply = (x, y) => x * y;
-// NOTE: need to have the division rounded to the nearest whole number.
+
 divide = (x, y) => x / y;
 
+function populateDisplay(){
+    
+}
 
+const button = document.querySelectorAll(button);
+const display = document.querySelectorAll(#display);
