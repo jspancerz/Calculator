@@ -1,3 +1,11 @@
+const buttons = document.querySelectorAll('.digit');
+const clearField = document.querySelector('#clear');
+const gui = document.querySelector('#display');
+
+clearField.addEventListener("click", function(e){
+    console.log('you clicked the clear button!')
+});
+
 function operate(operator, x, y){
     if(operator === 'add'){
        return add(x, y);
@@ -16,7 +24,7 @@ function operate(operator, x, y){
     }
 }
 
-let displayValue = {}
+let display = "";
 
 add = (x, y) =>  x + y;
 
@@ -25,10 +33,3 @@ subtract = (x, y) => x - y;
 multiply = (x, y) => x * y;
 
 divide = (x, y) => x / y;
-
-function populateDisplay(){
-    
-}
-
-const button = document.querySelectorAll(button);
-const display = document.querySelectorAll(#display);

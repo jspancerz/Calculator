@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: darkslategrey;
 }
 
 .operator{
@@ -14,7 +15,7 @@ body{
 button{
     font-size: x-large;
     color: blue;
-    background-color: greenyellow;
+    background-color: yellow;
     border-radius: 10px;
     border-style: groove;
     border-color: black;
@@ -25,12 +26,19 @@ button{
     text-align: center;
     height: 80px;
     width: 70px;
+    border-style: inset;
+    border-width: 3px; 
+    border-color: orangered;
 }
 
 #display{
     border-radius: 15px;
-
     height: 85px;
     width: 300px;
 }
 
+#outline{
+    border-style: groove;
+    border-width: 10px;
+    border-color:darkorange;
+}
