@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: darkslategrey;
+    background-color: rgb(6, 62, 131);
 }
 
 .operator{
@@ -28,17 +28,20 @@ button{
     width: 70px;
     border-style: inset;
     border-width: 3px; 
-    border-color: orangered;
+    border-color: rgb(136, 0, 73);
 }
 
 #display{
+    background-color: aliceblue;
     border-radius: 15px;
     height: 85px;
-    width: 300px;
+    width: 220px;
+    border-style: inset;
+    
 }
 
 #outline{
     border-style: groove;
     border-width: 10px;
-    border-color:darkorange;
+    border-color:rgb(141, 0, 139);
 }

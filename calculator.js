@@ -1,9 +1,24 @@
-const buttons = document.querySelectorAll('.digit');
+const numerals = document.querySelectorAll('.digit');
 const clearField = document.querySelector('#clear');
 const gui = document.querySelector('#display');
+const symbols = document.querySelectorAll('.operator');
+
 
 clearField.addEventListener("click", function(e){
-    console.log('you clicked the clear button!')
+    gui.textContent = '';
+});
+
+numerals.forEach((numeral) => {
+    numeral.addEventListener("click", () => {
+        gui.textContent = numeral.innerText
+    });
+});
+
+
+symbols.forEach((symbol) => {
+    symbol.addEventListener("click", () => {
+        gui.textContent = symbol.innerText
+    });
 });
 
 function operate(operator, x, y){
@@ -24,7 +39,7 @@ function operate(operator, x, y){
     }
 }
 
-let display = "";
+let displayMessage = gui
 
 add = (x, y) =>  x + y;
 
