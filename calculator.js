@@ -1,50 +1,47 @@
-const numerals = document.querySelectorAll('.digit');
-const clearField = document.querySelector('#clear');
-const gui = document.querySelector('#display');
-const symbols = document.querySelectorAll('.operator');
+//created dom objects to manipulate
+const display = document.querySelector( '.calculator-display' );
+const equalsBtn = document.querySelector( '.equals' );
+const allClearBtn = document.querySelector( '.allClear' );
+const numberBtns = document.querySelectorAll( '.number' );
+const operatorBtns = document.querySelectorAll( '.operator' );
 
 
-clearField.addEventListener("click", function(e){
-    gui.textContent = '';
-});
+//data storage to perform a calculation.
+const calculator = {
+    firstOperand: null,
+    secondOperand: null,
+    mathOperator: null,
+};
 
-numerals.forEach((numeral) => {
-    numeral.addEventListener("click", () => {
-        gui.textContent = numeral.innerText
-    });
-});
+//the mathematical operations, called when a user clicks a corresponding button and 'equals'
+const operate = {
+    add: ( operand1, operand2 ) => operand1 + operand2,
+    subtract: ( operand1, operand2 ) => operand1 - operand2,
+    multiply: ( operand1, operand2 ) => operand1 * operand2,
+    divide: ( operand1, operand2 ) => operand1 / operand2,
+};
 
 
-symbols.forEach((symbol) => {
-    symbol.addEventListener("click", () => {
-        gui.textContent = symbol.innerText
-    });
-});
+//creates clickable buttons for all the number keys.
+numberBtns.forEach( ( btn ) => {
+    btn.addEventListener( "click", () => {
+        display.innerText = btn.innerText
+        if ( calculator.firstOperand === null ) {
+            calculator.firstOperand = parseInt(display.textContent)
+        } else {
+            calculator.firstOperand += parseInt(btn.innerText) 
+        }
+    } )
+} );
 
-function operate(operator, x, y){
-    if(operator === 'add'){
-       return add(x, y);
-    }
-    if(operator === 'subtract'){
-      return subtract(x, y);
-    }
-    if(operator === 'multiply'){
-        return multiply(x, y);
-    }
-    if(operator === 'divide'){
-        return divide(x, y);
-    }
-    if(operator === 'divide' && x || y === 0){
-        return console.log('you cant divide by zero!')
-    }
+
+operatorBtns.forEach( ( btn ) => {
+    btn.addEventListener( "click", () => {
+        display.textContent = btn.innerText
+    } )
+} )
+
+//create a function to populate the calculators display whn a button is clicked 
+function updateDisplay() {
+
 }
-
-let displayMessage = gui
-
-add = (x, y) =>  x + y;
-
-subtract = (x, y) => x - y;
-
-multiply = (x, y) => x * y;
-
-divide = (x, y) => x / y;
