@@ -1,26 +1,72 @@
 body {
-    background-color: black;
+    background-color: blanchedalmond
+}
+
+.calculator-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: .50rem;
+    height: 100vh;
+    border: 35px;
+    border-color: salmon;
+    border-style: groove;
+    border-radius: 45px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 button {
-    background-color: slategray;
-    color: palegreen;
-    height: 125px;
-    width: 80px;
-    border: 5px;
+    background-color: lightskyblue;
+    color: whitesmoke;
+    height: 100px;
+    width: 85px;
+    border: 6px;
+    border-radius: 20px;
     border-style: inset;
-    border-color: green;
-    font-size: larger;
+    border-color: rebeccapurple;
+    font-size: xx-large;
+    margin: 4px;
+}
+
+.add{
+    background-color: springgreen;
+}
+
+.subtract{
+    background-color: coral;
+}
+
+.divide{
+    background-color:chocolate;
+}
+
+.multiply{
+    background-color:slateblue;
 }
 
 .calculator-display {
-    background-color: whitesmoke;
-    color: green;
+    background-color:white;
+    color: black;
     font-size: xx-large;
-    width: 325px;()
-    margin-bottom: 10px;
-    border: 6px;
-    border-style: inset;
-    border-color: aquamarine;
-    border-radius: 30px;
+    width: 425px;
+    border: 11px;
+    border-style: outset;
+    border-color: rebeccapurple;
+    border-radius: 50px;
+    margin-bottom: 3px;
+}
+
+.equals {
+    font-size: xx-large;
+    width: 375px;
+    margin-top: 5px;
+}
+
+.number-frame{
+    border: 15px;
+    border-color: coral;
+    border-style:inset;
+    border-radius: 20px;
 }

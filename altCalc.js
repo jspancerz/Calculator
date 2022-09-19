@@ -7,6 +7,7 @@ const addBtn = document.querySelector( '.add' );
 const subtractBtn = document.querySelector( '.subtract' );
 const divideBtn = document.querySelector( '.divide' );
 const multiplyBtn = document.querySelector( '.multiply' );
+const decimalBtn = document.querySelector( '.decimal' );
 
 let currentValue = '';
 let mathOperator = '';
@@ -42,9 +43,14 @@ function setOperator( op ) {
 };
 
 equalsBtn.addEventListener( 'click', function () {
-    if ( mathOperator !== '' ) {
+    if ( previousValue && currentValue != '' ) {
         calculate()
+        // if ( currentValue.length <= 6 ) {
         display.textContent = currentValue
+        // } else {
+        //     display.textContent = currentValue.slice( 0, 6 ) + '...';
+        // }
+        mathOperator = ''
     }
 } )
 
@@ -63,11 +69,22 @@ function calculate() {
     }
 };
 
+function addDecimal() {
+    if (!currentValue.includes( '.' )) {
+        currentValue += '.';
+    }
+};
+
+decimalBtn.addEventListener( "click", function () {
+    addDecimal()
+} );
+
 allClearBtn.addEventListener( 'click', () => {
-    display.textContent = '';
+    display.textContent = '0';
     currentValue = '';
     mathOperator = '';
     previousValue = '';
+    console.clear()
 } )
 
 function add( x, y ) {
