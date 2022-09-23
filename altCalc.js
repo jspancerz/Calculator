@@ -8,10 +8,13 @@ const subtractBtn = document.querySelector( '.subtract' );
 const divideBtn = document.querySelector( '.divide' );
 const multiplyBtn = document.querySelector( '.multiply' );
 const decimalBtn = document.querySelector( '.decimal' );
+const undoBtn = document.querySelector( '.undo' );
+
 
 let currentValue = '';
 let mathOperator = '';
 let previousValue = '';
+let shortenedValue = '';
 
 numberBtns.forEach( ( number ) => {
     number.addEventListener( 'click', function ( e ) {
@@ -21,9 +24,8 @@ numberBtns.forEach( ( number ) => {
 } )
 
 function setNumber( num ) {
-    if ( currentValue.length <= 5 ) {
+    if ( currentValue.length <= 6 ) {
         currentValue += num
-        console.log( `this is the currentValue: ${ currentValue }` )
     }
 };
 
@@ -37,20 +39,21 @@ operatorBtns.forEach( ( operator ) => {
 function setOperator( op ) {
     mathOperator = op
     previousValue = currentValue;
-    console.log( `this is the previousValue: ${ previousValue }` )
     currentValue = '';
-    console.log( `this is the currentValue: ${ currentValue }` )
 };
 
 equalsBtn.addEventListener( 'click', function () {
     if ( previousValue && currentValue != '' ) {
         calculate()
-        // if ( currentValue.length <= 6 ) {
-        display.textContent = currentValue
-        // } else {
-        //     display.textContent = currentValue.slice( 0, 6 ) + '...';
-        // }
         mathOperator = ''
+        currentValue = currentValue.toString()
+        if ( currentValue.length <= 6 ) {
+            display.textContent = currentValue
+        } else {
+            shortenedValue = currentValue.slice( 0, 6 ) + '...';
+            currentValue = shortenedValue
+            display.textContent = currentValue
+        }
     }
 } )
 
@@ -67,16 +70,19 @@ function calculate() {
     } else if ( mathOperator === '/' ) {
         currentValue = divide( previousValue, currentValue )
     }
+
+    currentValue = roundNum( currentValue );
 };
 
 function addDecimal() {
-    if (!currentValue.includes( '.' )) {
+    if ( !currentValue.includes( '.' ) ) {
         currentValue += '.';
     }
 };
 
 decimalBtn.addEventListener( "click", function () {
     addDecimal()
+    display.textContent = currentValue
 } );
 
 allClearBtn.addEventListener( 'click', () => {
@@ -84,8 +90,22 @@ allClearBtn.addEventListener( 'click', () => {
     currentValue = '';
     mathOperator = '';
     previousValue = '';
-    console.clear()
+    shortenedValue = '';
 } )
+
+undoBtn.addEventListener( 'click', function () {
+    undo()
+    display.textContent = currentValue
+} )
+
+function roundNum( num ) {
+    return Math.round( num * 1000 ) / 1000;
+}
+
+function undo() {
+    let newCurrentValue = currentValue.substring( 0, currentValue.length - 1 )
+    currentValue = newCurrentValue
+}
 
 function add( x, y ) {
     return result = x + y

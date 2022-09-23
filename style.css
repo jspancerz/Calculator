@@ -1,5 +1,5 @@
 body {
-    background-color: blanchedalmond
+    background-color: darkturquoise
 }
 
 .calculator-frame {
@@ -15,6 +15,7 @@ body {
     border-radius: 45px;
     margin-left: 25%;
     margin-right: 25%;
+    background-color: blanchedalmond;
 }
 
 button {
@@ -25,7 +26,7 @@ button {
     border: 6px;
     border-radius: 20px;
     border-style: inset;
-    border-color: rebeccapurple;
+    border-color: white;
     font-size: xx-large;
     margin: 4px;
 }
@@ -47,26 +48,33 @@ button {
 }
 
 .calculator-display {
-    background-color:white;
+    background-color:whitesmoke;
     color: black;
     font-size: xx-large;
-    width: 425px;
+    width: 420px;
+    height: 120px;;
     border: 11px;
     border-style: outset;
-    border-color: rebeccapurple;
-    border-radius: 50px;
+    border-color: salmon;
+    border-radius: 10px;
     margin-bottom: 3px;
+    color: royalblue;
 }
 
 .equals {
     font-size: xx-large;
-    width: 375px;
+    width: 280px;
     margin-top: 5px;
+    background-color: lightpink;
 }
 
 .number-frame{
     border: 15px;
-    border-color: coral;
+    border-color: salmon;
     border-style:inset;
     border-radius: 20px;
+}
+
+.undo{
+    background-color:palevioletred
 }
