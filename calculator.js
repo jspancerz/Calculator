@@ -37,9 +37,9 @@ operatorBtns.forEach( ( operator ) => {
 } )
 
 function setOperator( op ) {
-    mathOperator = op
-    previousValue = currentValue;
-    currentValue = '';
+        mathOperator = op
+        previousValue = currentValue;
+        currentValue = '';
 };
 
 equalsBtn.addEventListener( 'click', function () {
