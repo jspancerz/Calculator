@@ -1,81 +1,91 @@
 body {
-    background-color: darkturquoise
+    background-color: lightskyblue;
 }
 
 .calculator-frame {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    gap: .50rem;
+    align-items: center;
+    gap: 10px;
     height: 100vh;
-    border: 35px;
-    border-color: salmon;
-    border-style: groove;
+    border: 15px;
+    border-color: grey;
+    border-style: ridge;
     border-radius: 45px;
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 25%;
-    background-color: blanchedalmond;
+    background-color: darkblue;
 }
 
 button {
-    background-color: lightskyblue;
-    color: whitesmoke;
+    background-color: grey;
+    color: lightgreen;
     height: 100px;
     width: 85px;
-    border: 6px;
+    border: 5px;
     border-radius: 20px;
     border-style: inset;
-    border-color: white;
+    border-color: black;
     font-size: xx-large;
     margin: 4px;
 }
 
-.add{
-    background-color: springgreen;
+button:hover {
+    border-color: white;
+    outline: 5px;
+    outline-style: outset;
+    outline-color: yellow;
+    color:darkgreen;
+    background-color: lightgray;
 }
 
-.subtract{
+.add {
+    background-color: blanchedalmond;
+}
+
+.subtract {
     background-color: coral;
 }
 
-.divide{
-    background-color:chocolate;
+.divide {
+    background-color: chocolate;
 }
 
-.multiply{
-    background-color:slateblue;
+.multiply {
+    background-color: slateblue;
 }
 
 .calculator-display {
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     color: black;
     font-size: xx-large;
     width: 420px;
-    height: 120px;;
+    height: 120px;
+    ;
     border: 11px;
-    border-style: outset;
-    border-color: salmon;
+    border-style: solid;
+    border-color: black;
     border-radius: 10px;
     margin-bottom: 3px;
-    color: royalblue;
+    color: darkgreen;
 }
 
 .equals {
     font-size: xx-large;
     width: 280px;
     margin-top: 5px;
-    background-color: lightpink;
+    background-color: crimson;
 }
 
-.number-frame{
-    border: 15px;
-    border-color: salmon;
-    border-style:inset;
+.number-frame {
+    border: 10px;
+    border-color: darkgrey;
+    border-style: inset;
     border-radius: 20px;
 }
 
-.undo{
-    background-color:palevioletred
+.undo {
+    background-color: palevioletred
 }
